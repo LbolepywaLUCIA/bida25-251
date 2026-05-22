@@ -1,13 +1,187 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClassyClosetBoutique</title>
     <link rel="stylesheet" href="style.css">
+   <style>
+
+body {
+    background-color: beige;
+    background-image: url("photo/backgroundcolor.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    margin-left: 2px;
+    width: 100px;
+    height: auto;
+    border-radius: 100px;
+    display: block;
+}
+
+.logo h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.links {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    gap: 80px;
+}
+
+.links li {
+    list-style: none;
+}
+
+.links a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    font-size: 18px;
+}
+
+.links a:hover {
+    color:white;
+}
+     
+
+
+form{
+
+   width:400px;
+   margin:auto;
+   margin-top:50px;
+   margin-bottom: 50px;
+   background: white;
+   padding:25px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1)
+
+}
+
+label{
+   display: block;
+   margin-top: 15px;
+   font-weight: bold;
+
+
+}
+
+input, textarea {
+   width: 100%;
+   padding: 10px;
+   margin-top: 5px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+
+
+}
+
+textarea {
+   height: 120px;
+   resize: none;
+
+
+}
+ 
+.buttons{
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px;
+
+
+}
+
+.submit-btn{
+   padding: 10px 24px;
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.clear-btn{
+   padding: 10px 24px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+button:hover {
+   opacity:0.9;
+}
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+    margin-bottom: auto;
+}
+
+.footer h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+.footer img {
+    width: 30px;
+    height: 30px;
+}
+
+</style>  
+
 </head>
 <body>
+    
     <header>
+
         <div class="logo">
          <img src="logo/logo.jpg" alt="logo">
          <h2>ClassyClosetBoutique</h2>
@@ -22,3 +196,33 @@
          
          </div>
     </header>
+    
+ <form action="acknowledgement.html"method="get">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name required">
+
+      <label for="email">Email Adress</label>
+      <input type="email" id="email" name="email" required>
+      <textarea id="message" name-="message"required></textarea>
+
+      <div class="buttons">
+         <button type="reset" class="clear-btn">Clear</button>
+         <buton type="submit" class="submit-btn">Submit</buton>
+      </div>
+   </form>
+
+    
+
+<footer class="footer">
+        <h2>Classy Closet Boutique</h2>
+        <p>Elevate your style with our curated collection of elegant and trendy fashion pieces.</p>
+        <div class="footer-icons">
+            <img src="facebook.png" alt="facebook">
+            <img src="whatsapp.png" alt="whatsapp">
+        </div>
+        <p>@2026 ClassyClosetBoutique. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
