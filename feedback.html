@@ -1,24 +1,405 @@
-!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClassyClosetBoutique</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #C8C0B4;
+            min-height: 100vh;
+        }
+header {
+    width: 100%;
+    height: 100px;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    margin-left: 2px;
+    width: 100px;
+    height: auto;
+    border-radius: 100px;
+    display: block;
+}
+
+.logo h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.links {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+    gap: 80px;
+}
+
+.links li {
+    list-style: none;
+}
+
+.links a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    font-size: 18px;
+}
+
+.links a:hover {
+    color:white;
+}
+        
+        .feedback-section {
+            text-align: center;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .feedback-section h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+
+        .feedback-section p {
+            font-size: 1rem;
+            color: #3d3530;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-family: Arial, sans-serif;
+        }
+
+        .feedback-card {
+            max-width: 580px;
+            margin: 2rem auto 4rem;
+            background: #F0EDD8;
+            border-top: 4px solid #D4A96A;
+            border-radius: 6px;
+            padding: 2.5rem;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .star-label {
+            display: block;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7a6f65;
+            margin-bottom: 0.8rem;
+        }
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 2.5rem;
+            color: #c0b8b0;
+            cursor: pointer;
+            transition: color 0.2s, transform 0.15s;
+        }
+
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #D4A96A;
+            transform: scale(1.2);
+        }
+
+        #rating-msg {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            color: #b8894a;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            min-height: 1.4em;
+            margin-bottom: 1.8rem;
+        }
+
+        .field-label {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #7a6f65;
+            margin-bottom: 0.6rem;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 130px;
+            resize: vertical;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            background: #ffffff;
+            border: 1.5px solid #b0a89c;
+            border-radius: 4px;
+            padding: 1rem 1.2rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            line-height: 1.7;
+        }
+
+        textarea::placeholder {
+            color: #b0a898;
+            font-style: italic;
+        }
+
+        textarea:focus {
+            border-color: #D4A96A;
+            box-shadow: 0 0 0 3px rgba(212, 169, 106, 0.2);
+        }
+
+        .char-count {
+            text-align: right;
+            font-family: Arial, sans-serif;
+            font-size: 0.7rem;
+            color: #b0a89c;
+            margin-top: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem;
+            background-color: #D4A96A;
+            color: #1a1a1a;
+            border: 2px solid #b8894a;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1a1a1a;
+            color: #D4A96A;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .error-msg {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+            color: #9b5e2a;
+            margin-top: 0.6rem;
+            min-height: 1em;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #D4A96A;
+            color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.9rem 2rem;
+            border-left: 4px solid #b8894a;
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s, transform 0.4s;
+            white-space: nowrap;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+       .footer {
+    width: 100%;
+    height: auto;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+    margin-bottom: auto;
+}
+
+.footer h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+.footer img {
+    width: 30px;
+    height: 30px;
+}
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .feedback-card { margin: 1.5rem 1rem 3rem; padding: 1.8rem 1.2rem; }
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
         <div class="logo">
-         <img src="logo/logo.jpg" alt="logo">
-         <h2>ClassyClosetBoutique</h2>
+            <img src="logo/logo.jpg" alt="logo">
+            <h2>ClassyClosetBoutique</h2>
         </div>
-
         <div class="links">
             <li><a href="index.html">home</a></li>
             <li><a href="about.html">about</a></li>
             <li><a href="products.html">products</a></li>
             <li><a href="contact.html">contact</a></li>
             <li><a href="feedback.html">feedback</a></li>
-         
-         </div>
+        </div>
     </header>
+
+    <!-- BODY CONTENT -->
+    <section class="feedback-section">
+        <h2>We appreciate your feedback</h2>
+        <p>We are always looking for ways to improve your appearance.
+           Please take a moment to evaluate and tell us what you think.
+        </p>
+    </section>
+
+    <div class="feedback-card">
+
+        <!-- Stars -->
+        <span class="star-label">Rate your experience</span>
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">&#9733;</label>
+        </div>
+        <p id="rating-msg"></p>
+
+        <!-- Message -->
+        <span class="field-label">Your message</span>
+        <textarea id="feedback-text" placeholder="What can we do to improve your experience?" maxlength="500"></textarea>
+        <p class="char-count"><span id="char-count">0</span> / 500</p>
+
+        <!-- Button -->
+        <button class="submit-btn" onclick="submitFeedback()">Submit</button>
+        <p class="error-msg" id="error-msg"></p>
+
+    </div>
+
+    <div class="toast" id="toast">✔ Thank you — your feedback has been received!</div>
+
+    <footer class="footer">
+        <h2>Classy Closet Boutique</h2>
+        <p>Elevate your style with our curated collection of elegant and trendy fashion pieces.</p>
+        <div class="footer-icons">
+            <img src="facebook.png" alt="facebook">
+            <img src="whatsapp.png" alt="whatsapp">
+        </div>
+        <p>@2026 ClassyClosetBoutique. All rights reserved.</p>
+    </footer>
+
+    <script>
+    
+        const ratingLabels = { 1:'Poor', 2:'Fair', 3:'Good', 4:'Great', 5:'Excellent' };
+
+        document.querySelectorAll('.rating input').forEach(input => {
+            input.addEventListener('change', () => {
+                document.getElementById('rating-msg').textContent =
+                    ratingLabels[input.value] + '  (' + input.value + ' / 5)';
+            });
+        });
+
+        const textarea = document.getElementById('feedback-text');
+        const charCount = document.getElementById('char-count');
+
+        textarea.addEventListener('input', () => {
+            charCount.textContent = textarea.value.length;
+        });
+
+        function submitFeedback() {
+            const rating = document.querySelector('.rating input:checked');
+            const message = textarea.value.trim();
+            const err = document.getElementById('error-msg');
+
+            if (!rating) { err.textContent = 'Please select a star rating.'; return; }
+            if (!message) { err.textContent = 'Please write a message before submitting.'; textarea.focus(); return; }
+
+            err.textContent = '';
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+
+            document.querySelectorAll('.rating input').forEach(i => i.checked = false);
+            document.getElementById('rating-msg').textContent = '';
+            textarea.value = '';
+            charCount.textContent = '0';
+        }
+    </script>
+
+</body>
+</html>
