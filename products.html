@@ -1,52 +1,96 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClassyClosetBoutique</title>
+    <title>Products - ClassyClosetBoutique</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <div class="logo">
-         <img src="logo/logo.jpg" alt="logo">
-         <h2>ClassyClosetBoutique</h2>
+            <img src="logo/logo.jpg" alt="logo">
+            <h2>ClassyClosetBoutique</h2>
         </div>
-
-        <div class="links">
+        <nav class="links">
             <li><a href="index.html">home</a></li>
             <li><a href="about.html">about</a></li>
-            <li><a href="products.html">products</a></li>
+            <li><a href="products.html" class="active">products</a></li>
             <li><a href="contact.html">contact</a></li>
             <li><a href="feedback.html">feedback</a></li>
-         
-         </div>
+        </nav>
     </header>
-    <section>
-        <h2>Products</h2>
-        <p>Dresses Jacket Bags</p>
-        <div class="Products">
-            <img src="handbag.jpg" alt="handbag">
-            <h1>Rustic Charm handbag</h1>
-          <p>P500</p> 
-          <button>Shop Now</button>
+
+    <section class="products-section">
+
+        <div class="products-header">
+            <h1>Our Products</h1>
+            <div class="product-categories">
+                <span>Dresses</span>
+                <span>Jackets</span>
+                <span>Bags</span>
+            </div>
         </div>
-        <div class="Products">
-            <img src="dress.png" alt="dress">
-            <h1>Urban Print Dress</h1>
-            <p>650</p>
-            <button>Shop Now</button>
-        </div>
-         <div class="Products">
-            <img src="dress.png" alt="dress">
-            <h1>The Luna Beige dress</h1>
-            <p>700</p>
-            <button>Shop Now</button>
-        </div>
-         <div class="Products">
-            <img src="coat.png" alt="coat">
-            <h1>Chic Layer Coat</h1>
-            <p>550</p>
-            <button>Shop Now</button>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="photo/handbag.avif" alt="handbag">
+                </div>
+                <div class="product-info">
+                    <h3>Rustic Charm Handbag</h3>
+                    <p class="price">P500</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="photo/printed dress.avif" alt="printed dress">
+                </div>
+                <div class="product-info">
+                    <h3>Urban Print Dress</h3>
+                    <p class="price">P650</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="photo/beige dress.avif" alt="beige dress">
+                </div>
+                <div class="product-info">
+                    <h3>The Luna Beige Dress</h3>
+                    <p class="price">P700</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="photo/coat.avif" alt="coat">
+                </div>
+                <div class="product-info">
+                    <h3>Chic Layer Coat</h3>
+                    <p class="price">P550</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+
         </div>
     </section>
+
+    <footer class="footer">
+        <h2>Classy Closet Boutique</h2>
+        <p>Elevate your style with our curated collection of elegant and trendy fashion pieces.</p>
+        <div class="footer-icons">
+            <img src="facebook.png" alt="facebook">
+            <img src="whatsapp.png" alt="whatsapp">
+        </div>
+        <p>&copy@2026 ClassyClosetBoutique. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
