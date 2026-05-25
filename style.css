@@ -6,7 +6,7 @@
 
 body {
     background-color: beige;
-    background-image: url("photo/backgroundcolor.avif");
+    background-image: url("backgroundcolor.avif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -69,7 +69,7 @@ header {
 .home {
     height: 900px;
     width: 100%;
-    background-image: url("photo/homepage1.avif");
+    background-image: url("homepage1.avif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -155,6 +155,11 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     border-radius: 5px;
+    
+}
+
+.highlights button a{
+    text-decoration: none;
 }
 
 .highlights button:hover {
@@ -377,6 +382,402 @@ header {
 .product-info button:hover {
     background-color: #8b4a2f;
     color: white
+}
+
+/* RESPONSIVE DESIGN - Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    .links {
+        gap: 30px;
+        font-size: 14px;
+    }
+
+    .links a {
+        font-size: 14px;
+    }
+
+    .home {
+        height: 600px;
+    }
+
+    .home h1 {
+        font-size: 36px;
+    }
+
+    .home p {
+        font-size: 16px;
+    }
+
+    .about-intro h1 {
+        font-size: 32px;
+    }
+
+    .mission {
+        padding: 40px 30px;
+        gap: 20px;
+    }
+
+    .mission-text h2 {
+        font-size: 28px;
+    }
+
+    .products-section {
+        padding: 30px 20px;
+    }
+
+    .products-header h1 {
+        font-size: 32px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .product-categories {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
+
+/* RESPONSIVE DESIGN - Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .logo {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .logo h2 {
+        font-size: 16px;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .links a {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+
+    .home {
+        height: 400px;
+        padding: 15px;
+    }
+
+    .home h1 {
+        font-size: 24px;
+        margin-right: 0;
+    }
+
+    .home p {
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .home button {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .highlights {
+        padding: 20px 15px;
+    }
+
+    .highlights p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .responsive-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 280px;
+    }
+
+    .about-intro {
+        padding: 30px 15px 20px;
+    }
+
+    .about-intro h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .about-intro p {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .about-image {
+        height: 200px;
+    }
+
+    .mission {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .mission-text {
+        flex: 1;
+    }
+
+    .mission-text h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .mission-text > p {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .mission-points p {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
+    .products-section {
+        padding: 20px 10px;
+    }
+
+    .products-header h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-categories {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product-categories span {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 14px;
+    }
+
+    .product-info .price {
+        font-size: 13px;
+    }
+
+    .product-info button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 15px 10px;
+        gap: 8px;
+    }
+
+    .footer h2 {
+        font-size: 16px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    .footer img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* RESPONSIVE DESIGN - Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 8px 10px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .logo h2 {
+        font-size: 14px;
+    }
+
+    .links {
+        gap: 10px;
+    }
+
+    .links a {
+        font-size: 11px;
+        padding: 3px 5px;
+    }
+
+    .home {
+        height: 300px;
+        padding: 10px;
+    }
+
+    .home h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .home p {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .home button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .highlights {
+        padding: 15px 10px;
+        gap: 12px;
+    }
+
+    .highlights p {
+        font-size: 12px;
+    }
+
+    .responsive-img {
+        max-height: 200px;
+    }
+
+    .highlights button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .about-intro {
+        padding: 20px 10px 15px;
+    }
+
+    .about-intro h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .about-intro p {
+        font-size: 12px;
+    }
+
+    .about-image {
+        height: 150px;
+    }
+
+    .mission {
+        padding: 15px 10px;
+        gap: 12px;
+    }
+
+    .mission-text h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .mission-text > p {
+        font-size: 12px;
+    }
+
+    .products-section {
+        padding: 15px 8px;
+    }
+
+    .products-header h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .product-categories {
+        gap: 6px;
+    }
+
+    .product-categories span {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-info h3 {
+        font-size: 13px;
+    }
+
+    .product-info .price {
+        font-size: 12px;
+    }
+
+    .product-info button {
+        padding: 7px 14px;
+        font-size: 11px;
+    }
+
+    .footer {
+        padding: 12px 8px;
+        gap: 6px;
+    }
+
+    .footer h2 {
+        font-size: 14px;
+    }
+
+    .footer p {
+        font-size: 11px;
+    }
+
+    .footer img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 
